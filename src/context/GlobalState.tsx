@@ -26,7 +26,6 @@ export function GlobalProvider({ children }: { children: ReactNode }) {
 
   return (
     <GlobalContext.Provider value={{ state, dispatch }}>
-      {" "}
       {children}
     </GlobalContext.Provider>
   );
