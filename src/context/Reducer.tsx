@@ -1,6 +1,6 @@
 import { ACTION } from "./Actions";
 
-export default function reducer(state: any, action: any) { //type here
+export default function reducer(state: any, action: any) {
   switch (action.type) {
     case ACTION.REGISTER_TODO:
       return { ...state, addTodo: action.payload };
@@ -12,14 +12,14 @@ export default function reducer(state: any, action: any) { //type here
           { title: state.addTodo, id: Date.now(), date: state.date },
         ],
         addTodo: "",
-        date: ""
+        date: "",
       };
     case ACTION.DELETE_TODO:
       return {
         ...state,
         todo: [
           ...state.todo.filter(
-            (e: {id: number; date: string; title: string}) =>
+            (e: { id: number; date: string; title: string }) =>
               e.id !== action.payload
           ),
         ],
@@ -36,7 +36,7 @@ export default function reducer(state: any, action: any) { //type here
       state.selectedEdit = { ...state.selectedEdit, title: action.payload };
       state.todo = [
         ...state.todo.filter(
-          (e: {id: number; date: string; title: string}) =>
+          (e: { id: number; date: string; title: string }) =>
             e.id !== state.selectedEdit.id
         ),
         state.selectedEdit,

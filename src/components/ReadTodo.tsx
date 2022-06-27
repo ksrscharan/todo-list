@@ -3,7 +3,7 @@ import { ACTION } from "../context/Actions";
 import { GlobalContext } from "../context/GlobalState";
 
 function ReadTodo() {
-  const { state, dispatch } = useContext(GlobalContext); // type here
+  const { state, dispatch } = useContext(GlobalContext);
 
   return (
     <div>
@@ -27,7 +27,6 @@ function ReadTodo() {
               >
                 Edit
               </button>
-              {/* on click, isEditing - true, can update title, need to track id. */}
             </div>
           );
         })}
