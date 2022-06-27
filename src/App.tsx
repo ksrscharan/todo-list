@@ -1,25 +1,20 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AddUser from "./components/AddUser";
-import EditUser from "./components/EditUser";
-import Home from "./components/Home";
+import React from "react";
+import "./App.css";
+import AddTodo from "./components/AddTodo";
+import EditTodo from "./components/EditTodo";
+import ReadTodo from "./components/ReadTodo";
 import { GlobalProvider } from "./context/GlobalState";
 
-import React from "react";
-
-type Props = {};
-
-const App = (props: Props) => {
+function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Add" element={<AddUser />} />
-          <Route path="/Edit/:id" element={<EditUser />} />
-        </Routes>
-      </BrowserRouter>
+      <GlobalProvider>
+        <AddTodo />
+        <EditTodo />
+        <ReadTodo />
+      </GlobalProvider>
     </div>
   );
-};
+}
 
 export default App;
