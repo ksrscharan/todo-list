@@ -5,8 +5,8 @@ interface StateType {
   addTodo: string;
   date: string;
   isEditing: boolean;
-  todo: {}[] | { id: number; date: string; title: string }[];
   selectedEdit: {} | { id: number; date: string; title: string };
+  todo: {}[] | { id: number; date: string; title: string }[];
   updatedTitle: string;
 }
 
@@ -14,8 +14,8 @@ const initialState: StateType | any = {
   addTodo: "",
   date: "",
   isEditing: false,
-  todo: [],
   selectedEdit: {},
+  todo: [],
   updatedTitle: "",
 };
 
