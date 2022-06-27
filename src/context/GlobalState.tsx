@@ -1,18 +1,13 @@
-import React, {
-  createContext,
-  ReactNode,
-  useReducer,
-} from "react";
+import React, { createContext, ReactNode, useReducer } from "react";
 import Reducer from "./Reducer";
 
-
-interface StateType{
-  todo: {}[] | {id: number; title: string; date: string}[];
+interface StateType {
   addTodo: string;
+  date: string;
   isEditing: boolean;
-  updatedTitle: string
-  selectedEdit: {} | {id: number; title: string; date: string}
-  date: string
+  selectedEdit: {} | { id: number; date: string; title: string };
+  todo: {}[] | { id: number; date: string; title: string }[];
+  updatedTitle: string;
 }
 
 const initialState: StateType | any = {
@@ -24,14 +19,15 @@ const initialState: StateType | any = {
   date: "",
 };
 
-
 export const GlobalContext = createContext(initialState);
 
-export function GlobalProvider({ children }: {children: ReactNode}) {
+export function GlobalProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(Reducer, initialState);
 
   return (
-    <GlobalContext.Provider value={ { state , dispatch } }> {/* type here */}
+    <GlobalContext.Provider value={{ state, dispatch }}>
+      {" "}
+      {/* type here */}
       {children}
     </GlobalContext.Provider>
   );
