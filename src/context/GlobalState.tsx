@@ -11,12 +11,12 @@ interface StateType {
 }
 
 const initialState: StateType | any = {
-  todo: [],
   addTodo: "",
-  isEditing: false,
-  updatedTitle: "",
-  selectedEdit: {},
   date: "",
+  isEditing: false,
+  selectedEdit: {},
+  todo: [],
+  updatedTitle: "",
 };
 
 export const GlobalContext = createContext(initialState);
@@ -27,7 +27,6 @@ export function GlobalProvider({ children }: { children: ReactNode }) {
   return (
     <GlobalContext.Provider value={{ state, dispatch }}>
       {" "}
-      {/* type here */}
       {children}
     </GlobalContext.Provider>
   );
