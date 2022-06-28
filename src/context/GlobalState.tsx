@@ -1,8 +1,4 @@
-import React, {
-  createContext,
-  ReactNode,
-  useReducer,
-} from "react";
+import React, { createContext, ReactNode, useReducer } from "react";
 
 import Reducer from "./Reducer";
 
