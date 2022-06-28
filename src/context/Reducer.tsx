@@ -12,14 +12,14 @@ export default function reducer(state: any, action: any) {
           { title: state.addTodo, id: Date.now(), date: state.date },
         ],
         addTodo: "",
-        date: ""
+        date: "",
       };
     case ACTION.DELETE_TODO:
       return {
         ...state,
         todo: [
           ...state.todo.filter(
-            (e: {id: number; date: string; title: string}) =>
+            (e: { id: number; date: string; title: string }) =>
               e.id !== action.payload
           ),
         ],
@@ -36,7 +36,7 @@ export default function reducer(state: any, action: any) {
       state.selectedEdit = { ...state.selectedEdit, title: action.payload };
       state.todo = [
         ...state.todo.filter(
-          (e: {id: number; date: string; title: string}) =>
+          (e: { id: number; date: string; title: string }) =>
             e.id !== state.selectedEdit.id
         ),
         state.selectedEdit,
