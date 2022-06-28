@@ -1,6 +1,6 @@
 import { ACTION } from "./Actions";
 
-export default function reducer(state: any, action: any) { //type here
+export default function reducer(state: any, action: any) {
   switch (action.type) {
     case ACTION.REGISTER_TODO:
       return { ...state, addTodo: action.payload };

@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
+
 import { ACTION } from "../context/Actions";
 import { GlobalContext } from "../context/GlobalState";
 
 function EditTodo() {
-  const { state, dispatch } = useContext(GlobalContext); // type here
+  const { state, dispatch } = useContext(GlobalContext);
 
   return (
     <div>
