@@ -5,15 +5,19 @@ export default function reducer(state: any, action: any) {
     case ACTION.REGISTER_TODO:
       return { ...state, addTodo: action.payload };
     case ACTION.ADD_TODO:
-      return {
-        ...state,
-        todo: [
-          ...state.todo,
-          { title: state.addTodo, id: Date.now(), date: state.date },
-        ],
-        addTodo: "",
-        date: "",
-      };
+      if (state.addTodo !== "" && state.date !== "") {
+        return {
+          ...state,
+          todo: [
+            ...state.todo,
+            { title: state.addTodo, id: Date.now(), date: state.date },
+          ],
+          addTodo: "",
+          date: "",
+        };
+      } else {
+        return state;
+      }
     case ACTION.DELETE_TODO:
       return {
         ...state,
